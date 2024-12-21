@@ -9,8 +9,8 @@ const TradingAssistant = () => {
 
   const fetchAnalysis = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/ai-mentor");
-      const updatedAudioUrl = `http://localhost:5000/analysis.mp3?t=${Date.now()}`;
+      const response = await axios.get("http://91.107.226.186:5000/ai-mentor");
+      const updatedAudioUrl = `http://91.107.226.186:5000/analysis.mp3?t=${Date.now()}`;
       setAnalysis(response.data.analysis);
       setAudioUrl(updatedAudioUrl);
     } catch (error) {
