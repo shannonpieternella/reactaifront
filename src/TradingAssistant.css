@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #1e1e2f, #27293d);
+  background: linear-gradient(135deg, #1e1e2f, #27293d); /* Donkere gradiënt achtergrond */
   color: #ffffff;
 }
 
@@ -16,24 +16,24 @@ body {
 
 .dashboard-header {
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparante achtergrond */
   border-radius: 15px;
   padding: 20px;
   width: 100%;
   max-width: 800px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtiele schaduw */
 }
 
 .dashboard-header h1 {
   margin: 0;
   font-size: 2.5rem;
-  color: #00d1ff;
+  color: #00d1ff; /* Heldere blauwe kleur voor koptekst */
 }
 
 .dashboard-header p {
   margin: 0;
   font-size: 1rem;
-  color: #d1d1d1;
+  color: #d1d1d1; /* Lichtgrijze kleur voor ondertekst */
 }
 
 .dashboard-body {
@@ -44,30 +44,41 @@ body {
   max-width: 800px;
 }
 
-.analysis-section, .audio-section {
-  background: rgba(0, 0, 0, 0.5);
+.analysis-section,
+.audio-section,
+.tradingview-section {
+  background: rgba(0, 0, 0, 0.5); /* Donkere semi-transparante achtergrond */
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtiele schaduw */
 }
 
-.analysis-section h2, .audio-section h2 {
+.analysis-section h2,
+.audio-section h2,
+.tradingview-section h2 {
   margin: 0;
   font-size: 1.5rem;
-  color: #00d1ff;
-  border-bottom: 2px solid #00d1ff;
+  color: #00d1ff; /* Heldere blauwe kleur voor sectiekopteksten */
+  border-bottom: 2px solid #00d1ff; /* Blauw onderstreepte stijl */
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
 
-.analysis-section p, .audio-section audio {
+.analysis-section p,
+.audio-section audio {
   font-size: 1rem;
-  color: #d1d1d1;
+  color: #d1d1d1; /* Lichtgrijze tekstkleur */
 }
 
 .audio-section audio {
   width: 100%;
   outline: none;
+}
+
+.tradingview-widget {
+  width: 100%;
+  height: 500px; /* Hoogte van de TradingView-widget */
+  background-color: #121212; /* Donkere achtergrond voor de widget */
 }
 
 .dashboard-footer {
@@ -82,11 +93,11 @@ body {
 }
 
 .dashboard-footer .brand {
-  color: #00d1ff;
+  color: #00d1ff; /* Heldere blauwe kleur voor de merknaam */
   font-weight: bold;
 }
 
 .dashboard-footer p::before {
   content: "⚡ ";
-  color: #00d1ff;
+  color: #00d1ff; /* Blauw icoontje voor de footertekst */
 }

@@ -6,6 +6,7 @@ const TradingAssistant = () => {
   const [analysis, setAnalysis] = useState("");
   const [audioUrl, setAudioUrl] = useState("");
   const audioPlayerRef = useRef(null);
+  const widgetContainerRef = useRef(null);
 
   const fetchAnalysis = async () => {
     try {
@@ -34,6 +35,27 @@ const TradingAssistant = () => {
     }
   }, [audioUrl]);
 
+  useEffect(() => {
+    // Initialiseer de TradingView-widget
+    if (widgetContainerRef.current) {
+      new window.TradingView.widget({
+        container_id: "tradingview-widget",
+        autosize: true,
+        symbol: "BLACKBULL:NAS100", // NASDAQ 100 van BlackBull
+        interval: "15", // 15 minuten interval
+        timezone: "America/New_York", // New York-tijdzone
+        theme: "dark", // Donker thema
+        style: "1",
+        locale: "en",
+        toolbar_bg: "#1e1e1e",
+        enable_publishing: false,
+        allow_symbol_change: true,
+        hideideas: true,
+        studies: [] // Volume-indicator verwijderd
+      });
+    }
+  }, []);
+
   return (
     <div className="dashboard">
       <div className="dashboard-header">
@@ -53,6 +75,12 @@ const TradingAssistant = () => {
             <source src={audioUrl} type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
+        </div>
+
+        <div className="tradingview-section">
+          <h2>Trading Chart</h2>
+          {/* Widget wordt hier weergegeven */}
+          <div ref={widgetContainerRef} id="tradingview-widget" className="tradingview-widget"></div>
         </div>
       </div>
       
